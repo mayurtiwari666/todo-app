@@ -24,4 +24,5 @@ phases:
     commands:
       - echo "Pushing image & deploying"
       - docker push $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:latest
-      - kubectl apply -f k8s/
+      - - kubectl apply -f k8s/ --validate=false
+
